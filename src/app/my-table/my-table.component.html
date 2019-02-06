@@ -1,0 +1,36 @@
+
+<table class="table  table-hover table-striped text-monospace col-12">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Product id</th>
+      <th scope="col">Product name</th>
+      <th scope="col">Prise</th>
+      <th scope="col">Category</th>
+      <th ngbDropdown >
+        <button class="btn btn-outline-info" id="dropdownBasic1" ngbDropdownToggle>SORT</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button (click)="dataSort(0)" class="dropdown-item">All</button>
+          <button (click)="dataSort(1)" class="dropdown-item">Category_1</button>
+          <button (click)="dataSort(2)" class="dropdown-item">Category_2</button>
+          <button (click)="dataSort(3)" class="dropdown-item">Category_3</button>
+        </div>
+      </th>
+
+    </tr>
+  </thead>
+
+  <tbody  *ngFor="let Products of Tablist">
+    <tr [class.text-danger]="maxPrice(Products.price)">
+      <th>{{Products.id}}</th>
+      <th>{{Products.name}}</th>
+      <th>{{Products.price}}</th>
+      <th>{{Products.category}}</th>
+      <th><button (click)="dataService.delData(Products.id)" class="btn btn-info">Delet</button></th>
+    </tr>
+  </tbody>
+
+</table>
+
+<app-add></app-add>
+
+

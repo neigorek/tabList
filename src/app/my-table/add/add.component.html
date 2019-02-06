@@ -1,0 +1,38 @@
+<div class="input-group bg-light col-12">
+
+  <div class="col">
+
+    <span class="input-group-text" id="basic0">Name</span>
+    <input class="form-control"  type="text" [(ngModel)]="name" aria-describedby="basic0">
+
+  </div>
+
+
+  <div class="col">
+
+    <span class="input-group-text" id="basic1">Price</span>
+    <input class="form-control" type="number" [(ngModel)]="price" aria-describedby="basic1">
+
+  </div>
+
+  <div class="col">
+
+    <span class="input-group-text" id="basic2" >Category</span>
+
+    <select aria-describedby="basic2" class="custom-select" id="inputGroupSelect01" [(ngModel)]="category">
+
+      <option value="category_1">One</option>
+      <option value="category_2">Two</option>
+      <option value="category_3">Three</option>
+
+    </select>
+
+  </div>
+
+  <div class="col mt-3">
+
+    <button class="btn btn-block btn-outline-info" (click)="addProd()">Add</button>
+
+  </div>
+
+</div>
